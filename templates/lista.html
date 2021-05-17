@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <div class="jumbotron p-3">
+        <div class="well text-center">
+            <h1>Lista de clientes</h1>
+            <hr>
+            <table border="4">
+                <tr>
+                    <td>ID</td>
+                    <td>Nome</td>
+                    <td>Telefone</td>
+                    <td>CPF</td>
+                    <td>E-mail</td>
+                </tr>
+                
+                {% for pessoa in pessoas %}
+                <tr>
+                    <td>{{ pessoa.id}}</td>
+                    <td>{{ pessoa.name }}</td>
+                    <td>{{ pessoa.telefone }}</td>
+                    <td>{{ pessoa.cpf }}</td>
+                    <td>{{ pessoa.email }}</td>
+                </tr>
+                    {% endfor %}
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>
