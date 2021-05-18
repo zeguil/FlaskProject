@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <title>Lista de Clientes</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <div class="jumbotron p-3">
@@ -11,25 +14,28 @@
             <hr>
             <table border="4">
                 <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>Telefone</td>
-                    <td>CPF</td>
-                    <td>E-mail</td>
+                    <td align=center>ID</td>
+                    <td align=center>Nome</td>
+                    <td align=center>Telefone</td>
+                    <td align=center>CPF</td>
+                    <td align=center>E-mail</td>
+                    <td align=center>Excluir</td>
                 </tr>
                 
                 {% for pessoa in pessoas %}
                 <tr>
-                    <td>{{ pessoa.id}}</td>
-                    <td>{{ pessoa.name }}</td>
-                    <td>{{ pessoa.telefone }}</td>
-                    <td>{{ pessoa.cpf }}</td>
-                    <td>{{ pessoa.email }}</td>
+                    <td align=center>{{ pessoas.index(pessoa)+1}}</td>
+                    <td align=center>{{ pessoa.name }}</td>
+                    <td align=center>{{ pessoa.telefone }}</td>
+                    <td align=center>{{ pessoa.cpf }}</td>
+                    <td align=center>{{ pessoa.email }}</td>
+                    <td align=center><a href="/excluir/{{ pessoa.id }}">X</a></td>
                 </tr>
-                    {% endfor %}
-                
+                {% endfor %}
             </table>
+            <a href="index">Voltar</a>
         </div>
     </div>
 </body>
+
 </html>

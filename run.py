@@ -50,5 +50,19 @@ def lista():
     pessoas = Cliente.query.all()
     return render_template("lista.html", pessoas=pessoas)
 
+@app.route("/alterar", methods=['GET', 'POST'])
+def alterar():
+    pass
+
+
+@app.route("/excluir/<int:id>")
+def excluir(id):
+    pessoa = Cliente.query.filter_by(id=id).first()
+    db.session.delete(pessoa)
+    db.session.commit()
+    return redirect(url_for("lista"))
+    
+    
+
 if __name__ == "__main__":
     app.run(debug=True)
